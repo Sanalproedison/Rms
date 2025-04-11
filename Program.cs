@@ -161,9 +161,9 @@ class Program
         int n = 64;
         var (list1, list2, list3, list4) = Phasor_Angle(n, voltage);
 
-        for (int i = 0; i < list4.Count; i++)
+        for (int i = 0; i < list3.Count; i++)
         {
-            Console.WriteLine(list4[i]);
+            Console.WriteLine(list3[i]);
 
         }
         int z=list4.Count;
@@ -174,10 +174,10 @@ class Program
 
     static (List<double>, List<double>, List<double>, List<double>) Phasor_Angle(int n, double[] values)
     {
-        List<double> phasor_angle = Enumerable.Repeat(0.0, n).ToList();      //For phasor angle
-        List<double> fundamental_magnitude = Enumerable.Repeat(0.0, n).ToList();         //For fundamental magnitude
-        List<double> Thd = Enumerable.Repeat(0.0, n).ToList();      //for THD
-        List<double> rms = Enumerable.Repeat(0.0, n).ToList(); //for rms
+        List<double> phasor_angle = Enumerable.Repeat(0.0, n-1).ToList();      //For phasor angle
+        List<double> fundamental_magnitude = Enumerable.Repeat(0.0, n-1).ToList();         //For fundamental magnitude
+        List<double> Thd = Enumerable.Repeat(0.0, n-1).ToList();      //for THD
+        List<double> rms = Enumerable.Repeat(0.0, n-1).ToList(); //for rms
       
         List<double> second_harmonic = new List<double>();      //for second harmonic   
         List<double> third_harmonic = new List<double>();       //for third harmonic
